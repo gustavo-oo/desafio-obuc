@@ -1,53 +1,70 @@
-<p align="center">
-  <img src="logoObuc.png" alt="drawing" style="width:200px;" />
-</p>
-<br>
+# Getting Started with Create React App
 
-# 🤓 Desafio Desenvolvedor Front-end Obuc
-Dona Maria é uma confeiteira de mão cheia. Ela faz doces muito gostosos e, com isso, seu negócio só cresce. Com o tempo, ela viu a necessidade de escalar sua marca e contratar mais pessoas para ajudá-la no nesse crescimento. Para não se perder nas contratações, decidiu criar um formulário em papel onde preencheria informações pertinentes a vaga.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Com o tempo e o crescimento dos doces Dona Maria, ela decidiu melhorar o processo e passar a confecção desses formulários para um sistema, evitando ter que preencher um por um manualmente.
+## Available Scripts
 
-A ideia do desafio é atender a demanda da cliente, permitindo que ela preencha de forma facilitada o formulário de novas vagas.
+In the project directory, you can run:
 
-> A maior parte das informações se repete por vaga. Por exemplo, quando se contrata alguém para atender o balcão, o título do cargo, salário, atividades que o cargo exerce, habilidades necessárias e experiência necessária tendem a ter os mesmos valores que a última contratação daquele cargo.
+### `npm start`
 
-## O que é esperado do teste?
-1. Um formulário contendo:
-  - Título do cargo;
-  - Salário;
-  - Atividades que o cargo exerce;
-  - Benefícios do cargo;
-  - Etapas do processo;
-  - Habilidades necessárias;
-  - Experiência necessária.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-2. Disponibilizar uma maneira de exportar o formulário no fim do processo.
-3. Validação de dados
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-## O que essa aplicação deve fazer?
-- Formulário para preenchimento da requisição com todos os campos necessários.
-- Validação do formulário.
+### `npm test`
 
-## Quais tecnologias eu devo usar?
-- React
-- HTML
-- CSS
-- Javascript
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Quais tecnologias eu posso usar?
-Fique à vontade para:
-- Utilizar Typescript.
-- Utilizar bibliotecas para auxiliar na solução.
-- Incorporar testes.
+### `npm run build`
 
-> Se achar necessário, utilize o localStorage ou bibliotecas como [JSON Server](https://www.npmjs.com/package/json-server) para simular um banco de dados.
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Como devo começar?
-Você irá criar um novo repositório baseado neste template e irá codificar sua 
-solução dentro da pasta raiz, após isso você irá enviar o link do seu 
-repositório (não esqueça de deixá-lo público) para o requisitante do teste.
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## Links que podem ajudar 
-- [Criar um repositório a partir de um modelo](https://docs.github.com/pt/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)
-- [React](https://pt-br.reactjs.org/)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
+
+### Code Splitting
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+
+### Analyzing the Bundle Size
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
