@@ -1,0 +1,13 @@
+.text-field {
+    display: flex;
+    align-items: center;
+
+    & > span {
+        position: absolute;
+        margin-left: 15px;
+    }
+}
+
+.text-field-unit {
+    padding-left: 40px !important;
+}
