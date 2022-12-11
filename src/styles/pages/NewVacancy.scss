@@ -1,4 +1,19 @@
+@import "../components/Sidebar.scss";
+
+.new-vacancy-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-left: $sidebar-width;
+}
+
 .register-title {
     font-family: 'Lora', serif;
     margin-top: 30px;
+}
+
+.save-button {
+    margin-bottom: 20px;
 }

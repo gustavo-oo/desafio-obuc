@@ -1,9 +1,10 @@
 import { useState } from "react";
-import Button from "../components/Button";
-
-import Input from "../components/Input";
 
 import "../styles/pages/NewVacancy.scss"
+
+import Button from "../components/Button";
+import TextField from "../components/TextField";
+import TextArea from "../components/TextArea";
 
 import vacancyValidation from "../validations/vacancyValidation";
 
@@ -14,8 +15,8 @@ const NewVacancy = () => {
         activities: "",
         benefits: "",
         processSteps: "",
-        skillsRequired: "",
-        experienceRequired: "",
+        requiredSkills: "",
+        requiredExperience: "",
     });
 
     const [errors, setErrors] = useState({});
@@ -39,19 +40,18 @@ const NewVacancy = () => {
         }
     }
 
-
     return (
-        <div style={{ width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '30px' }}>
+        <div className="new-vacancy-container">
             <h1 className="register-title">Cadastro</h1>
             <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <Input
+                <TextField
                     label="Título do Cargo"
                     id="jobTitle"
                     error={errors["jobTitle"]}
                     value={vacancyData["jobTitle"]}
                     onChange={onChangeHandler}
                 />
-                <Input
+                <TextField
                     label="Salário"
                     id="salary"
                     error={errors["salary"]}
@@ -60,7 +60,42 @@ const NewVacancy = () => {
                     unit="R$"
                     type="number"
                 />
-                <Button label={"Salvar"} onClick={onSubmit}/>
+                <TextArea
+                    label="Atividades do Cargo"
+                    id="activities"
+                    error={errors["activities"]}
+                    value={vacancyData["activities"]}
+                    onChange={onChangeHandler}
+                />
+                <TextArea
+                    label="Benefícios do Cargo"
+                    id="benefits"
+                    error={errors["benefits"]}
+                    value={vacancyData["benefits"]}
+                    onChange={onChangeHandler}
+                />
+                <TextArea
+                    label="Etapas do Processo"
+                    id="processSteps"
+                    error={errors["processSteps"]}
+                    value={vacancyData["processSteps"]}
+                    onChange={onChangeHandler}
+                />
+                <TextArea
+                    label="Habilidades Necessárias"
+                    id="requiredSkills"
+                    error={errors["requiredSkills"]}
+                    value={vacancyData["requiredSkills"]}
+                    onChange={onChangeHandler}
+                />
+                <TextArea
+                    label="Experiência Necessária"
+                    id="requiredSkills"
+                    error={errors["requiredSkills"]}
+                    value={vacancyData["requiredSkills"]}
+                    onChange={onChangeHandler}
+                />
+                <Button label={"Salvar"} className="save-button" onClick={onSubmit}/>
             </div>
         </div>
     )

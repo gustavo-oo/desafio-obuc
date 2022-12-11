@@ -1,0 +1,9 @@
+$sidebar-width: 22vw;
+
+.sidebar-container {
+    display: flex;
+    border: 1px solid blue;
+    min-width: $sidebar-width;
+    height: 100vh;
+    position: fixed
+}
