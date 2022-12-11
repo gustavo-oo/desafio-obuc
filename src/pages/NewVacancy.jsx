@@ -66,11 +66,19 @@ const NewVacancy = () => {
         axios
             .get(`/vacancies?${findByJobTitle}&${sortId}&${sortOrder}&${queryLimit}`)
             .then(({ data }) => {
-                console.log(data[0]);
-                const firstResult = data[0];
+                const {
+                    salary,
+                    activities,
+                    requiredSkills,
+                    requiredExperience,
+                } = data[0];
+
                 setVacancyData({
                     ...vacancyData,
-                    salary: firstResult.salary,
+                    salary,
+                    activities,
+                    requiredSkills,
+                    requiredExperience
                 });
             });
     }
