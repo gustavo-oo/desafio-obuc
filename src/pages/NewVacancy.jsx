@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 import "../styles/pages/NewVacancy.scss"
 
 import Button from "../components/Button";
 import TextField from "../components/TextField";
 import TextArea from "../components/TextArea";
+import PageTemplate from "../components/PageTemplate";
 
+import axios from "../config/axiosConfig";
 import vacancyValidation from "../validations/vacancyValidation";
 
 const NewVacancy = () => {
@@ -18,8 +21,10 @@ const NewVacancy = () => {
         requiredSkills: "",
         requiredExperience: "",
     });
-
     const [errors, setErrors] = useState({});
+    const [waitingSubmit, setWaitingSubmit] = useState(false);
+
+    const navigate = useNavigate();
 
     function onChangeHandler(event) {
         const field = event.target.id;
@@ -36,12 +41,46 @@ const NewVacancy = () => {
         setErrors(errors);
 
         if (!hasErrors) {
-            console.log("submit");
+            setWaitingSubmit(true);
+            axios
+                .post("/vacancies", vacancyData)
+                .then(({ data }) => {
+                    console.log(data);
+                    navigate(
+                        `/vacancies/${data.id}`,
+                        { state: { sucess: true } }
+                    );
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
         }
     }
 
+    function loadLastVacancyData() {
+        const findByJobTitle =`jobTitle=${vacancyData.jobTitle}`;
+        const sortId = "_sort=id";
+        const sortOrder = "_order=desc";
+        const queryLimit = "_limit=1";
+
+        axios
+            .get(`/vacancies?${findByJobTitle}&${sortId}&${sortOrder}&${queryLimit}`)
+            .then(({ data }) => {
+                console.log(data[0]);
+                const firstResult = data[0];
+                setVacancyData({
+                    ...vacancyData,
+                    salary: firstResult.salary,
+                });
+            });
+    }
+
+    function onExport() {
+
+    }
+
     return (
-        <div className="new-vacancy-container">
+        <PageTemplate childrenClassName="new-vacancy-container">
             <h1 className="register-title">Cadastro</h1>
             <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <TextField
@@ -50,6 +89,7 @@ const NewVacancy = () => {
                     error={errors["jobTitle"]}
                     value={vacancyData["jobTitle"]}
                     onChange={onChangeHandler}
+                    onUnfocus={loadLastVacancyData}
                 />
                 <TextField
                     label="Salário"
@@ -90,14 +130,24 @@ const NewVacancy = () => {
                 />
                 <TextArea
                     label="Experiência Necessária"
-                    id="requiredSkills"
-                    error={errors["requiredSkills"]}
-                    value={vacancyData["requiredSkills"]}
+                    id="requiredExperience"
+                    error={errors["requiredExperience"]}
+                    value={vacancyData["requiredExperience"]}
                     onChange={onChangeHandler}
                 />
-                <Button label={"Salvar"} className="save-button" onClick={onSubmit}/>
+                <Button
+                    label={"Salvar"}
+                    className="save-button"
+                    onClick={onSubmit}
+                    disabled={waitingSubmit}
+                />
+                <Button
+                    label={"Exportar"}
+                    className="save-button"
+                    onClick={onExport}
+                />
             </div>
-        </div>
+        </PageTemplate>
     )
 }
 

@@ -1,0 +1,12 @@
+.page-template-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.page-template-fixed-logo {
+    width: 100px;
+    height: auto;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+}

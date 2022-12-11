@@ -1,6 +1,10 @@
+import PageTemplate from "../components/PageTemplate";
+
 const VacanciesList = () => {
     return (
-        <p>Lista de vagas</p>
+        <PageTemplate>
+            <p>Lista de vagas</p>
+        </PageTemplate>
     )
 }
 

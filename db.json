@@ -1,19 +1,74 @@
 {
-  "posts": [
+  "vacancies": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "jobTitle": "111",
+      "salary": "111",
+      "activities": "111",
+      "benefits": "11",
+      "processSteps": "11",
+      "requiredSkills": "11",
+      "requiredExperience": "11",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "jobTitle": "1",
+      "salary": "1",
+      "activities": "1",
+      "benefits": "1",
+      "processSteps": "1",
+      "requiredSkills": "1",
+      "requiredExperience": "1",
+      "id": 2
+    },
+    {
+      "jobTitle": "1",
+      "salary": "1",
+      "activities": "1",
+      "benefits": "1",
+      "processSteps": "1",
+      "requiredSkills": "1",
+      "requiredExperience": "1",
+      "id": 3
+    },
+    {
+      "jobTitle": "1",
+      "salary": "1",
+      "activities": "a",
+      "benefits": "a",
+      "processSteps": "a",
+      "requiredSkills": "a",
+      "requiredExperience": "a",
+      "id": 4
+    },
+    {
+      "jobTitle": "Analista",
+      "salary": "1300",
+      "activities": "varias",
+      "benefits": "grandes",
+      "processSteps": "muitas",
+      "requiredSkills": "diversas",
+      "requiredExperience": "todas",
+      "id": 5
+    },
+    {
+      "jobTitle": "Analista",
+      "salary": "1300",
+      "activities": "aa",
+      "benefits": "aa",
+      "processSteps": "a",
+      "requiredSkills": "a",
+      "requiredExperience": "a",
+      "id": 6
+    },
+    {
+      "jobTitle": "Analista",
+      "salary": "5000",
+      "activities": "a",
+      "benefits": "a",
+      "processSteps": "a",
+      "requiredSkills": "a",
+      "requiredExperience": "a",
+      "id": 7
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

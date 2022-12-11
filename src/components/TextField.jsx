@@ -9,6 +9,7 @@ const TextField = ({
     unit,
     value,
     onChange,
+    onUnfocus,
     type = "text",
 }) => {
     return (
@@ -24,6 +25,7 @@ const TextField = ({
                     id={id}
                     value={value}
                     onChange={onChange}
+                    onBlur={onUnfocus}
                 />
             </div>
         </InputContainer>
