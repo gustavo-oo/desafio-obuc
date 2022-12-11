@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 import "../styles/pages/NewVacancy.scss"
 
 import Button from "../components/Button";
-import TextField from "../components/TextField";
-import TextArea from "../components/TextArea";
+import TextField from "../components/input/TextField";
+import TextArea from "../components/input/TextArea";
 import PageTemplate from "../components/PageTemplate";
 
 import axios from "../config/axiosConfig";

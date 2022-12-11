@@ -1,6 +1,4 @@
-import "../styles/components/TextArea.scss"
-
-import TextareaAutosize from 'react-textarea-autosize';
+import "../../styles/components/input/TextField.scss"
 
 import InputContainer from "./InputContainer"
 
@@ -8,20 +6,26 @@ const TextField = ({
     label,
     id = label,
     error = false,
+    unit,
     value,
     onChange,
+    onUnfocus,
+    type = "text",
 }) => {
     return (
         <InputContainer error={error}>
             <label htmlFor={id}>
                 {label}
             </label>
-            <div className="text-area-field">
-                <TextareaAutosize
+            <div className="text-field">
+                <span>{unit}</span>
+                <input
+                    type={type}
+                    className={unit ? "text-field-unit" : ""}
                     id={id}
                     value={value}
                     onChange={onChange}
-                    minRows={4}
+                    onBlur={onUnfocus}
                 />
             </div>
         </InputContainer>
