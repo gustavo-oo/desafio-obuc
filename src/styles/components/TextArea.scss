@@ -1,0 +1,8 @@
+.text-area-field {
+    display: flex;
+
+    & > textarea {
+        resize: none;
+        padding: 10px 10px 10px 15px;
+    }
+}
