@@ -1,13 +1,13 @@
 {
   "vacancies": [
     {
-      "jobTitle": "111",
-      "salary": "111",
-      "activities": "111",
-      "benefits": "11",
-      "processSteps": "11",
-      "requiredSkills": "11",
-      "requiredExperience": "11",
+      "jobTitle": "Barista",
+      "salary": "1300",
+      "activities": "Área e especialização profissional: Informática, TI, Telecomunicações - TI Nível hierárquico: Assistente Lugar de trabalho: Brasília, DF Regime de contratação de tipo Efetivo – CLT       Jornada Período Integral Responsável pela manutenção e monitoramento dos ativos de redes, bem como seus serviços, visando a disponibilidade dos recursos (hardware e software) Requisitos: Ensino médio completo; Curso técnico na área de TI ou afins",
+      "benefits": "BeneficiosEt",
+      "processSteps": "Etapas",
+      "requiredSkills": "Hab",
+      "requiredExperience": "Exp",
       "id": 1
     },
     {
@@ -19,56 +19,6 @@
       "requiredSkills": "1",
       "requiredExperience": "1",
       "id": 2
-    },
-    {
-      "jobTitle": "1",
-      "salary": "1",
-      "activities": "1",
-      "benefits": "1",
-      "processSteps": "1",
-      "requiredSkills": "1",
-      "requiredExperience": "1",
-      "id": 3
-    },
-    {
-      "jobTitle": "1",
-      "salary": "1",
-      "activities": "a",
-      "benefits": "a",
-      "processSteps": "a",
-      "requiredSkills": "a",
-      "requiredExperience": "a",
-      "id": 4
-    },
-    {
-      "jobTitle": "Analista",
-      "salary": "1300",
-      "activities": "varias",
-      "benefits": "grandes",
-      "processSteps": "muitas",
-      "requiredSkills": "diversas",
-      "requiredExperience": "todas",
-      "id": 5
-    },
-    {
-      "jobTitle": "Analista",
-      "salary": "1300",
-      "activities": "aa",
-      "benefits": "aa",
-      "processSteps": "a",
-      "requiredSkills": "a",
-      "requiredExperience": "a",
-      "id": 6
-    },
-    {
-      "jobTitle": "Analista",
-      "salary": "5000",
-      "activities": "a",
-      "benefits": "a",
-      "processSteps": "a",
-      "requiredSkills": "a",
-      "requiredExperience": "a",
-      "id": 7
     }
   ]
 }

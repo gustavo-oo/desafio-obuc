@@ -1,6 +1,6 @@
 
 import NewVacancy from "./pages/NewVacancy";
-import ListVacancies from "./pages/ListVacancies";
+import VacanciesList from "./pages/VacanciesList";
 
 const routes = [
     {
@@ -9,7 +9,7 @@ const routes = [
     },
     {
         path: "/vacancies",
-        element: <ListVacancies />,
+        element: <VacanciesList />,
     },
 ];
 

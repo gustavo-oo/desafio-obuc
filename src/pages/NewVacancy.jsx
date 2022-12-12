@@ -10,6 +10,10 @@ import PageTemplate from "../components/PageTemplate";
 
 import axios from "../config/axiosConfig";
 import vacancyValidation from "../validations/vacancyValidation";
+import VacancyPdfTemplate from "../components/VacancyPdfTemplate";
+import DownloadButton from "../components/DownloadButton";
+import Title from "../components/Title";
+
 
 const NewVacancy = () => {
     const [vacancyData, setVacancyData] = useState({
@@ -44,10 +48,9 @@ const NewVacancy = () => {
             setWaitingSubmit(true);
             axios
                 .post("/vacancies", vacancyData)
-                .then(({ data }) => {
-                    console.log(data);
+                .then(() => {
                     navigate(
-                        `/vacancies/${data.id}`,
+                        `/vacancies`,
                         { state: { sucess: true } }
                     );
                 })
@@ -83,13 +86,9 @@ const NewVacancy = () => {
             });
     }
 
-    function onExport() {
-
-    }
-
     return (
         <PageTemplate childrenClassName="new-vacancy-container">
-            <h1 className="register-title">Cadastro</h1>
+            <Title>Cadastro</Title>
             <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <TextField
                     label="Título do Cargo"
@@ -148,11 +147,6 @@ const NewVacancy = () => {
                     className="save-button"
                     onClick={onSubmit}
                     disabled={waitingSubmit}
-                />
-                <Button
-                    label={"Exportar"}
-                    className="save-button"
-                    onClick={onExport}
                 />
             </div>
         </PageTemplate>
