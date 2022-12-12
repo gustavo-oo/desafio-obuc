@@ -13,7 +13,7 @@ import "../styles/pages/VacanciesList.scss";
 
 function getVacancyDescription(vacancy) {
     return vacancyFields.map(({ title, prop }) => (
-        <div className="vacancy-field">
+        <div key={prop} className="vacancy-field">
             <p>{title}:</p>
             <p>{prop === "salary" ? "R$" : ""} {vacancy[prop]}</p>
         </div>
