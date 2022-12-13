@@ -2,7 +2,7 @@ export default function vacancyValidation(vacancy) {
     let errors = {};
 
     errors = validateEmptyFields(errors, vacancy);
-    errors = validateSalary(errors, vacancy);
+    errors = validateSalary(errors, vacancy.salary);
 
     return {
         errors,
@@ -20,10 +20,10 @@ function validateEmptyFields(errors, vacancy) {
     return errors;
 }
 
-function validateSalary(errors, vacancy) {
-    const intSalary = parseInt(vacancy.salary, 10);
+function validateSalary(errors, salary) {
+    const floatSalary = parseFloat(salary);
 
-    if (intSalary <= 0) {
+    if (floatSalary <= 0) {
         errors["salary"] = "Salário deve ser maior que R$ 0"
     }
 
