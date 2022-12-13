@@ -1,4 +1,4 @@
-import numberToCurrency from "helpers/numberToCurrency";
+import useNumberToCurrency from "hooks/useNumberToCurrency";
 
 const vacancyFields = [
     { title: "Atividades do Cargo", prop: "activities" },
@@ -6,7 +6,7 @@ const vacancyFields = [
     { title: "Experiência Necessária", prop: "requiredExperience" },
     { title: "Etapas do Processo Seletivo", prop: "processSteps" },
     { title: "Benefícios", prop: "benefits" },
-    { title: "Salário", prop: "salary", formatter: numberToCurrency},
+    { title: "Salário", prop: "salary", formatter: useNumberToCurrency},
 ];
 
 export default vacancyFields;
