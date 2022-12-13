@@ -8,10 +8,12 @@ import "../styles/components/DownloadButton.scss";
 
 const DownloadButton = ({ className, docComponent, fileName, label }) => {
     const [downloadLink, setDownloadLink] = useState();
+    const [isLoading, setIsLoading] = useState(false);
     const downloadButtonRef = useRef();
 
     const clickToDownload = useCallback(() =>{
         downloadButtonRef.current.click();
+        setIsLoading(false);
         URL.revokeObjectURL(downloadLink);
         setDownloadLink(null);
     }, [downloadButtonRef, downloadLink])
@@ -47,8 +49,9 @@ const DownloadButton = ({ className, docComponent, fileName, label }) => {
         >
             <Button
                 label={label}
-                onClick={downloadFile}
+                onClick={(e) => { setIsLoading(true) || downloadFile(e) }}
                 disabled={downloadLink}
+                isLoading={isLoading}
             />
         </a>
     )
