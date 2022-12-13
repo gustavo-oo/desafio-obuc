@@ -175,6 +175,7 @@ const NewVacancy = () => {
                     className="save-button"
                     onClick={onSubmit}
                     disabled={waitingSubmit}
+                    isLoading={waitingSubmit}
                 />
             </div>
         </PageTemplate>

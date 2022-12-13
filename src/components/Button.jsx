@@ -17,7 +17,11 @@ const Button = ({ label, onClick, className, isLoading = false, disabled = false
     }
 
     function renderLoading() {
-        return <CircularProgress />;
+        return (
+            <div className="loading-container">
+                <CircularProgress />
+            </div>
+        )
     }
 
     return isLoading ? renderLoading() : renderButton();
