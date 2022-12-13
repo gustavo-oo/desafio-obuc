@@ -1,9 +1,8 @@
 import "styles/components/Card.scss";
 
-const Card = ({ title, children }) => {
+const Card = ({ children }) => {
     return (
         <div className="card-container">
-            <h2>{title}</h2>
             {children}
         </div>
     )

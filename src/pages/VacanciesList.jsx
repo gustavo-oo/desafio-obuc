@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 
 import Card from "components/Card";
 import PageTemplate from "components/PageTemplate";
@@ -7,7 +7,9 @@ import DownloadButton from "components/DownloadButton";
 import VacancyPdfTemplate from "components/VacancyPdfTemplate";
 
 import CircularProgress from '@mui/material/CircularProgress';
+import DeleteIcon from '@mui/icons-material/Delete';
 
+import { NotificationContext } from "contexts/NotificationContext";
 import axios from "config/axiosConfig";
 import vacancyFields from "enums/vacancyFields";
 
@@ -25,6 +27,20 @@ function getVacancyDescription(vacancy) {
 const VacanciesList = () => {
     const [vacancies, setVacancies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const notification = useContext(NotificationContext);
+
+    function onDelete(id) {
+        axios
+            .delete(`/vacancies/${id}`)
+            .then(() => {
+                const newVacancies = vacancies.filter(vacancy => vacancy.id !== id);
+                setVacancies(newVacancies);
+                notification.setSuccess("Vaga excluída com sucesso");
+            }).catch(({ message }) => {
+                notification.setError(message);
+            });
+    }
 
     useEffect(() => {
         const sortId = "_sort=id";
@@ -46,6 +62,10 @@ const VacanciesList = () => {
                 key={`${vacancy.jobTitle}-${index}`}
                 title={vacancy.jobTitle}
             >
+                <div className="card-header">
+                    <h2>{vacancy.jobTitle}</h2>
+                    <DeleteIcon sx={{ position: "absolute", alignSelf: "flex-end"}} className="icon-button" onClick={() => onDelete(vacancy.id)} />
+                </div>
                 {getVacancyDescription(vacancy)}
                 <DownloadButton
                     docComponent={<VacancyPdfTemplate vacancy={vacancy} />}

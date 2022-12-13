@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "styles/pages/NewVacancy.scss"
@@ -9,6 +9,7 @@ import TextArea from "components/input/TextArea";
 import PageTemplate from "components/PageTemplate";
 import ConfirmDialog from "components/ConfirmDialog";
 
+import { NotificationContext } from "contexts/NotificationContext";
 import axios from "config/axiosConfig";
 import vacancyValidation from "validations/vacancyValidation";
 import Title from "components/Title";
@@ -29,6 +30,8 @@ const NewVacancy = () => {
     const [previousData, setPreviousData] = useState({})
     const [errors, setErrors] = useState({});
     const [waitingSubmit, setWaitingSubmit] = useState(false);
+
+    const notification = useContext(NotificationContext);
 
     useEffect(() => {
         if (shouldLoadPreviousData) {
@@ -73,13 +76,11 @@ const NewVacancy = () => {
             axios
                 .post("/vacancies", vacancyData)
                 .then(() => {
-                    navigate(
-                        `/vacancies`,
-                        { state: { sucess: true } }
-                    );
+                    navigate("/vacancies");
+                    notification.setSuccess("Vaga criada com sucesso");
                 })
-                .catch((error) => {
-                    console.log(error);
+                .catch(({ message }) => {
+                    notification.setError(message);
                 });
         }
     }
@@ -110,8 +111,8 @@ const NewVacancy = () => {
 
                     setDialogOpen(true);
                 }
-            }).catch((error) => {
-                console.log(error);
+            }).catch(({ message }) => {
+                notification.setError(message);
             });
     }
 
