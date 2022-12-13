@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../styles/pages/NewVacancy.scss"
@@ -7,11 +7,10 @@ import Button from "../components/Button";
 import TextField from "../components/input/TextField";
 import TextArea from "../components/input/TextArea";
 import PageTemplate from "../components/PageTemplate";
+import ConfirmDialog from "../components/ConfirmDialog";
 
 import axios from "../config/axiosConfig";
 import vacancyValidation from "../validations/vacancyValidation";
-import VacancyPdfTemplate from "../components/VacancyPdfTemplate";
-import DownloadButton from "../components/DownloadButton";
 import Title from "../components/Title";
 
 
@@ -25,8 +24,21 @@ const NewVacancy = () => {
         requiredSkills: "",
         requiredExperience: "",
     });
+    const [dialogOpen, setDialogOpen] = useState(false);
+    const [shouldLoadPreviousData, setShouldLoadPreviousData] = useState(false);
+    const [previousData, setPreviousData] = useState({})
     const [errors, setErrors] = useState({});
     const [waitingSubmit, setWaitingSubmit] = useState(false);
+
+    useEffect(() => {
+        if (shouldLoadPreviousData) {
+            setVacancyData({
+                ...vacancyData,
+                ...previousData,
+            })
+            setShouldLoadPreviousData(false);
+        }
+    }, [previousData, vacancyData, shouldLoadPreviousData])
 
     const navigate = useNavigate();
 
@@ -38,6 +50,18 @@ const NewVacancy = () => {
             ...vacancyData,
             [field]: data,
         })
+    }
+
+    function renderConfirmDialog() {
+        const confirmText = `Você deseja carregar os dados da última vaga de ${vacancyData.jobTitle} ?`;
+        return (
+            <ConfirmDialog
+                open={dialogOpen}
+                text={confirmText}
+                setOpen={setDialogOpen}
+                setAnswer={setShouldLoadPreviousData}
+            />
+        );
     }
 
     function onSubmit() {
@@ -69,25 +93,29 @@ const NewVacancy = () => {
         axios
             .get(`/vacancies?${findByJobTitle}&${sortId}&${sortOrder}&${queryLimit}`)
             .then(({ data }) => {
-                const {
-                    salary,
-                    activities,
-                    requiredSkills,
-                    requiredExperience,
-                } = data[0];
+                if (data.length > 0) {
+                    const {
+                        salary,
+                        activities,
+                        requiredSkills,
+                        requiredExperience,
+                    } = data[0];
 
-                setVacancyData({
-                    ...vacancyData,
-                    salary,
-                    activities,
-                    requiredSkills,
-                    requiredExperience
-                });
+                    setPreviousData({
+                        salary,
+                        activities,
+                        requiredSkills,
+                        requiredExperience,
+                    });
+
+                    setDialogOpen(true);
+                }
             });
     }
 
     return (
         <PageTemplate childrenClassName="new-vacancy-container">
+            {renderConfirmDialog()}
             <Title>Cadastro</Title>
             <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                 <TextField
