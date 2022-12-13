@@ -8,4 +8,17 @@ $button-border-radius: 18px;
     background-color: #db717d;
     color: white;
     cursor: pointer;
+
+    &:hover {
+        background-color: darken(#db717d, 15%);
+    }
+}
+
+.button-secondary {
+    border: 1px solid #8a8a8a;
+    background-color: #6e6e6e;
+
+    &:hover {
+        background-color: darken(#6e6e6e, 15%);
+    }
 }
