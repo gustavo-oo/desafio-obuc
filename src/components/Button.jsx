@@ -2,7 +2,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import "styles/components/Button.scss"
 
-const Button = ({ label, onClick, className, isLoading = false, disabled = false }) => {
+const Button = ({ label, id, onClick, className, isLoading = false, disabled = false }) => {
     function renderButton() {
         return (
             <button
@@ -10,6 +10,7 @@ const Button = ({ label, onClick, className, isLoading = false, disabled = false
                 type="button"
                 onClick={onClick}
                 disabled={disabled}
+                id={id}
             >
                 {label}
             </button>
