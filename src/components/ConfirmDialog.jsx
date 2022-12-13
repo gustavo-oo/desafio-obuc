@@ -2,7 +2,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
-import Button from "./Button";
+import Button from "components/Button";
 
 const ConfirmDialog = ({ open, setOpen, setAnswer, text }) => {
     function handleClose() {

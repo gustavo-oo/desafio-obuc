@@ -1,9 +1,9 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
-import vancancyFields from "../enums/vacancyFields";
+import vancancyFields from "enums/vacancyFields";
 
-import donaMariaLogo from "../assets/donamaria.png";
+import donaMariaLogo from "assets/donamaria.png";
 
 // Create styles
 const styles = StyleSheet.create({

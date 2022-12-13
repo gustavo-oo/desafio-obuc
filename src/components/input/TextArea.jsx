@@ -1,8 +1,8 @@
-import "../../styles/components/input/TextArea.scss"
+import "styles/components/input/TextArea.scss"
 
 import TextareaAutosize from 'react-textarea-autosize';
 
-import InputContainer from "./InputContainer"
+import InputContainer from "components/input/InputContainer"
 
 const TextField = ({
     label,

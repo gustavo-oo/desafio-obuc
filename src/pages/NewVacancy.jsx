@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "../styles/pages/NewVacancy.scss"
+import "styles/pages/NewVacancy.scss"
 
-import Button from "../components/Button";
-import TextField from "../components/input/TextField";
-import TextArea from "../components/input/TextArea";
-import PageTemplate from "../components/PageTemplate";
-import ConfirmDialog from "../components/ConfirmDialog";
+import Button from "components/Button";
+import TextField from "components/input/TextField";
+import TextArea from "components/input/TextArea";
+import PageTemplate from "components/PageTemplate";
+import ConfirmDialog from "components/ConfirmDialog";
 
-import axios from "../config/axiosConfig";
-import vacancyValidation from "../validations/vacancyValidation";
-import Title from "../components/Title";
+import axios from "config/axiosConfig";
+import vacancyValidation from "validations/vacancyValidation";
+import Title from "components/Title";
 
 
 const NewVacancy = () => {

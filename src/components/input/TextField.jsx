@@ -1,6 +1,6 @@
-import "../../styles/components/input/TextField.scss"
+import "styles/components/input/TextField.scss"
 
-import InputContainer from "./InputContainer"
+import InputContainer from "components/input/InputContainer"
 
 const TextField = ({
     label,

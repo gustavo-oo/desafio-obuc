@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-import circlesImg from "../assets/circles.png";
+import circlesImg from "assets/circles.png";
 
 const Sidebar = () => (
     <div className="sidebar-container">

@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 
-import Card from "../components/Card";
-import PageTemplate from "../components/PageTemplate";
-import Title from "../components/Title";
-import DownloadButton from "../components/DownloadButton";
-import VacancyPdfTemplate from "../components/VacancyPdfTemplate";
+import Card from "components/Card";
+import PageTemplate from "components/PageTemplate";
+import Title from "components/Title";
+import DownloadButton from "components/DownloadButton";
+import VacancyPdfTemplate from "components/VacancyPdfTemplate";
 
 import CircularProgress from '@mui/material/CircularProgress';
 
-import axios from "../config/axiosConfig";
-import vacancyFields from "../enums/vacancyFields";
+import axios from "config/axiosConfig";
+import vacancyFields from "enums/vacancyFields";
 
-import "../styles/pages/VacanciesList.scss";
+import "styles/pages/VacanciesList.scss";
 
 function getVacancyDescription(vacancy) {
     return vacancyFields.map(({ title, prop }) => (

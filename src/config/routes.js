@@ -1,6 +1,6 @@
 
-import NewVacancy from "./pages/NewVacancy";
-import VacanciesList from "./pages/VacanciesList";
+import NewVacancy from "pages/NewVacancy";
+import VacanciesList from "pages/VacanciesList";
 
 const routes = [
     {

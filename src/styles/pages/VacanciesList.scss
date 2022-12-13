@@ -1,4 +1,4 @@
-@import "../components/Sidebar.scss";
+@import "styles/components/Sidebar.scss";
 
 .vacancies-list-page {
     width: 100%;
@@ -16,8 +16,6 @@
 .vacancies-list-container {
     width: 95%;
     overflow-y: auto;
-    // display: flex;
-    // margin: auto;
 }
 
 .vacancies-list {

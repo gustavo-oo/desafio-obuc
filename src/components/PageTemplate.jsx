@@ -1,8 +1,8 @@
-import Sidebar from './Sidebar';
+import Sidebar from 'components/Sidebar';
 
-import donaMariaLogo from "../assets/donamaria.png"
+import donaMariaLogo from "assets/donamaria.png"
 
-import "../styles/components/PageTemplate.scss"
+import "styles/components/PageTemplate.scss"
 
 const PageTemplate = ({ children, childrenClassName }) => (
     <div className="page-template-container">

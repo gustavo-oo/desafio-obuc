@@ -2,9 +2,9 @@ import { useState, useEffect, useRef, useCallback } from "react";
 
 import { pdf } from '@react-pdf/renderer';
 
-import Button from "./Button";
+import Button from "components/Button";
 
-import "../styles/components/DownloadButton.scss";
+import "styles/components/DownloadButton.scss";
 
 const DownloadButton = ({ className, docComponent, fileName, label }) => {
     const [downloadLink, setDownloadLink] = useState();

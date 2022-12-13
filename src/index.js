@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import "./styles/Globals.scss";
+import "styles/Globals.scss";
 
-import routes from "./routes";
+import routes from "config/routes";
 
 import {
   createBrowserRouter,

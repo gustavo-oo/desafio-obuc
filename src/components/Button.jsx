@@ -1,6 +1,6 @@
 import CircularProgress from '@mui/material/CircularProgress';
 
-import "../styles/components/Button.scss"
+import "styles/components/Button.scss"
 
 const Button = ({ label, onClick, className, isLoading = false, disabled = false }) => {
     function renderButton() {

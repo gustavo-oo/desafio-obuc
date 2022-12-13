@@ -1,4 +1,4 @@
-import "../../styles/components/input/InputContainer.scss"
+import "styles/components/input/InputContainer.scss"
 
 const InputContainer = ({ children, error }) => (
     <div className={`input-container ${error ? "input-field-error" : ""}`}>
