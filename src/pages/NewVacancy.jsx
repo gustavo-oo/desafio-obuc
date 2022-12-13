@@ -110,6 +110,8 @@ const NewVacancy = () => {
 
                     setDialogOpen(true);
                 }
+            }).catch((error) => {
+                console.log(error);
             });
     }
 
@@ -172,6 +174,7 @@ const NewVacancy = () => {
                 />
                 <Button
                     label={"Salvar"}
+                    id="submit"
                     className="save-button"
                     onClick={onSubmit}
                     disabled={waitingSubmit}
