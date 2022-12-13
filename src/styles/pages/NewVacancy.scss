@@ -12,6 +12,13 @@
     min-height: 100vh;
 }
 
+.new-vacancy-fields {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .save-button {
     margin-bottom: 20px;
 }

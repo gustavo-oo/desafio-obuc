@@ -117,7 +117,7 @@ const NewVacancy = () => {
         <PageTemplate childrenClassName="new-vacancy-container">
             {renderConfirmDialog()}
             <Title>Cadastro</Title>
-            <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div className="new-vacancy-fields">
                 <TextField
                     label="Título do Cargo"
                     id="jobTitle"
