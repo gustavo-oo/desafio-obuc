@@ -61,11 +61,11 @@ const VacancyPdfTemplate = ({ vacancy }) => {
           </View>
         </View>
         <View style={styles.section}>
-          {vancancyFields.map(({ title, prop }) => (
+          {vancancyFields.map(({ title, prop, formatter }) => (
             <View key={title} style={styles.topic}>
                 <Text style={styles.subtitle}>{title}:</Text>
                 <Text style={styles.text}>
-                  {vacancy[prop] === "salary" ? "R$" : ""} {vacancy[prop]}
+                  {formatter ? formatter(vacancy[prop]) : vacancy[prop]}
                 </Text>
             </View>
           ))}

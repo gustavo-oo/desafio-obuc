@@ -14,10 +14,10 @@ import vacancyFields from "enums/vacancyFields";
 import "styles/pages/VacanciesList.scss";
 
 function getVacancyDescription(vacancy) {
-    return vacancyFields.map(({ title, prop }) => (
+    return vacancyFields.map(({ title, prop, formatter }) => (
         <div key={prop} className="vacancy-field">
             <p>{title}:</p>
-            <p>{prop === "salary" ? "R$" : ""} {vacancy[prop]}</p>
+            <p>{formatter ? formatter(vacancy[prop]) : vacancy[prop]}</p>
         </div>
     ))
 }
