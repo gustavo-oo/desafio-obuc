@@ -41,16 +41,14 @@ const VacanciesList = () => {
             <Card
                 key={`${vacancy.jobTitle}-${index}`}
                 title={vacancy.jobTitle}
-                button={
-                    <DownloadButton
-                        docComponent={<VacancyPdfTemplate vacancy={vacancy} />}
-                        fileName={`${vacancy.jobTitle}.pdf`}
-                        label={"Exportar"}
-                        className="save-button"
-                    />
-                }
             >
                 {getVacancyDescription(vacancy)}
+                <DownloadButton
+                    docComponent={<VacancyPdfTemplate vacancy={vacancy} />}
+                    fileName={`${vacancy.jobTitle}.pdf`}
+                    label={"Exportar"}
+                    className="save-button"
+                />
             </Card>
         ));
     }
