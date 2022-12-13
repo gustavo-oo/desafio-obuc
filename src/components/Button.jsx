@@ -17,7 +17,7 @@ const Button = ({ label, onClick, className, isLoading = false, disabled = false
     }
 
     function renderLoading() {
-        return <CircularProgress color="inherit" />;
+        return <CircularProgress />;
     }
 
     return isLoading ? renderLoading() : renderButton();

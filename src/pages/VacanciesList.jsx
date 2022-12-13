@@ -6,6 +6,8 @@ import Title from "../components/Title";
 import DownloadButton from "../components/DownloadButton";
 import VacancyPdfTemplate from "../components/VacancyPdfTemplate";
 
+import CircularProgress from '@mui/material/CircularProgress';
+
 import axios from "../config/axiosConfig";
 import vacancyFields from "../enums/vacancyFields";
 
@@ -22,6 +24,7 @@ function getVacancyDescription(vacancy) {
 
 const VacanciesList = () => {
     const [vacancies, setVacancies] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const sortId = "_sort=id";
@@ -30,6 +33,7 @@ const VacanciesList = () => {
             .get(`/vacancies?${sortId}&${sortOrder}`)
             .then(({ data }) => {
                 setVacancies(data);
+                setIsLoading(false)
             })
             .catch((error) => {
                 console.log(error);
@@ -56,11 +60,14 @@ const VacanciesList = () => {
     return (
         <PageTemplate childrenClassName="vacancies-list-page">
             <Title>Vagas Abertas</Title>
-            <div className="vacancies-list-container">
-                <div className="vacancies-list">
-                    {renderVacancies()}
+            {
+                isLoading ? <CircularProgress /> :
+                <div className="vacancies-list-container">
+                    <div className="vacancies-list">
+                        {renderVacancies()}
+                    </div>
                 </div>
-            </div>
+            }
         </PageTemplate>
     )
 }
