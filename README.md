@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="src/assets/logoObuc.png" alt="drawing" style="width:200px;" />
+</p>
+<br>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 🤓 Proposta: Desafio Desenvolvedor Front-end Obuc <a name = "about"></a>
+Dona Maria é uma confeiteira de mão cheia. Ela faz doces muito gostosos e, com isso, seu negócio só cresce. Com o tempo, ela viu a necessidade de escalar sua marca e contratar mais pessoas para ajudá-la no nesse crescimento. Para não se perder nas contratações, decidiu criar um formulário em papel onde preencheria informações pertinentes a vaga.
 
-## Available Scripts
+Com o tempo e o crescimento dos doces Dona Maria, ela decidiu melhorar o processo e passar a confecção desses formulários para um sistema, evitando ter que preencher um por um manualmente.
 
-In the project directory, you can run:
+A ideia do desafio é atender a demanda da cliente, permitindo que ela preencha de forma facilitada o formulário de novas vagas.
 
-### `npm start`
+> A maior parte das informações se repete por vaga. Por exemplo, quando se contrata alguém para atender o balcão, o título do cargo, salário, atividades que o cargo exerce, habilidades necessárias e experiência necessária tendem a ter os mesmos valores que a última contratação daquele cargo.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📝 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [Getting Started](#getting_started)
+- [Executando os Testes](#tests)
+- [Funcionalidades](#usage)
+- [Built Using](#built_using)
+- [TODO](#todo)
+- [Authors](#authors)
 
-### `npm test`
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Para ter-se uma cópia de desenvolvimento local rodando, deve-se executar os seguintes passos:
+ - Clonar o repositório
+ - Rodar o comando a seguir. A flag **--legacy-peer-deps** é opcional visto que existe um arquivo de configuração que já a habilita. No entanto, em caso de erro, use-a.
+ ```
+ npm install --legacy-peer-deps
+ ```
+ - Em seguida, para rodar o projeto, basta rodar o comando:
+  ```
+ npm start
+ ```
+ - Foi utilizada uma biblioteca que concorrentemente executa o site e o json server. Em caso de erro com relação a isso, execute-os separadamente (em dois terminais) com os comandos:
+ ```
+ npm run start_react_only
+ ```
+  ```
+ npm run start_server_only
+ ```
 
-### `npm run build`
+### Pré-requisitos
+- NodeJs - Versão 18.0.0
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🔧 Executando os Testes <a name = "tests"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para a execução dos testes o projeto já deve estar rodando. Existem duas opções para verificá-los:
+ - Sem interface:
+ ```
+  npx cypress run
+ ```
+ - Com interface:
+  ```
+  npx cypress open
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🎈 Funcionalidades <a name="usage"></a>
 
-### `npm run eject`
+O sistema consiste de basicamente duas telas: uma para a criação de vagas, e outra para a visualização destas.
+<p float="left">
+  <img src="https://i.imgur.com/8qnE5SF.png" width="500" />
+  <img src="https://i.imgur.com/xlxtbjQ.png" width="500" /> 
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<h2> Cadastro </h2>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Ao criar-se uma nova vaga o usuário é redirecionado para as vagas do sistema e esta é listada em primeiro. É também apresentada uma noticação de que o processo ocorreu com sucesso:
+![Gif de criação de Vaga](https://i.imgur.com/Dzrs4Ie.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Ao digitar o título de uma vaga igual a uma já cadastrada, o sistema sugere o autopreenchimento de alguns campos. Também existem validações para todos os campos:
+![Gif demonstrando o autopreenchimento da vaga](https://i.imgur.com/wZeZJmw.gif)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Uma notificação de erro é apresentada em cada caso de erro de comunicação com o backend. Para todas os botões existe um ícone de loading para o caso de demora na resposta.
 
-## Learn More
+<h2> Listagem </h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ao excluir uma vaga, esta é removida da base de dados e também é apresentada uma notificação correspondente.
+Também é possível exportar uma vaga no formato PDF:
+![Exportação do PDF](https://i.imgur.com/EDGVjuk.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## ⛏️ Built Using <a name = "built_using"></a>
 
-### Code Splitting
+- [Json Server](https://www.npmjs.com/package/json-server) - Fake API Rest
+- [ReactJS](https://reactjs.org/) - Biblioteca Javascript
+- [Mui](https://mui.com/) - Biblioteca de componentes visuais
+- [React Text Area Autosize](https://www.npmjs.com/package/react-textarea-autosize) - Biblioteca de Componente Text Area
+- [Axios](https://www.npmjs.com/package/axios) - Biblioteca para requisições HTTTP
+- [Cypress](https://www.cypress.io/) - Biblioteca de Testes
+- [React PDF](https://www.npmjs.com/package/@react-pdf/renderer) - Biblioteca para geração de PDFs
+- [SASS](https://sass-lang.com/) - Biblioteca de extensão de CSS
+- [Concurrently](https://www.npmjs.com/package/concurrently) - Biblioteca para execução de scripts concorrentemente
+- [NodeJs](https://nodejs.org/en/) - Ambiente
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🚧 TODO <a name = "todo"></a>
+- Separar o formulário de criação de vaga em um componente a parte para reutilização em uma tela de edição de vagas
+- Alterar o componente de Dialog para ser um context assim como a notificação
+- Alterar alguns campos do formulário para seletores com um ícone **+**
+- Utilizar typescript e adicionar lint no projeto
+- Adicionar mais casos de teste
+- Melhorar design do PDF exportado
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ✍️ Authors <a name = "authors"></a>
+- [Gustavo P. Chaves](https://github.com/gustavo-oo)
