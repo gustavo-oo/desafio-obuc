@@ -15,10 +15,10 @@ A ideia do desafio é atender a demanda da cliente, permitindo que ela preencha 
 ## 📝 Table of Contents
 
 - [Getting Started](#getting_started)
+- [Executando os Testes](#tests)
 - [Funcionalidades](#usage)
-- [Testes](#tests)
 - [Built Using](#built_using)
-- [TODO](../TODO.md)
+- [TODO](#todo)
 - [Authors](#authors)
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
@@ -44,10 +44,6 @@ Para ter-se uma cópia de desenvolvimento local rodando, deve-se executar os seg
 ### Pré-requisitos
 - NodeJs - Versão 18.0.0
 
-## 🎈 Funcionalidades <a name="usage"></a>
-
-O sistema consiste de basicamente duas telas: uma para a criação de vagas, e outra para a visualização destas.
-
 ## 🔧 Executando os Testes <a name = "tests"></a>
 
 Para a execução dos testes o projeto já deve estar rodando. Existem duas opções para verificá-los:
@@ -60,3 +56,51 @@ Para a execução dos testes o projeto já deve estar rodando. Existem duas opç
   npx cypress open
   ```
 
+## 🎈 Funcionalidades <a name="usage"></a>
+
+O sistema consiste de basicamente duas telas: uma para a criação de vagas, e outra para a visualização destas.
+<p float="left">
+  <img src="https://i.imgur.com/8qnE5SF.png" width="500" />
+  <img src="https://i.imgur.com/xlxtbjQ.png" width="500" /> 
+</p>
+
+<h2> Cadastro </h2>
+
+Ao criar-se uma nova vaga o usuário é redirecionado para as vagas do sistema e esta é listada em primeiro. É também apresentada uma noticação de que o processo ocorreu com sucesso:
+![Gif de criação de Vaga](https://i.imgur.com/Dzrs4Ie.gif)
+
+Ao digitar o título de uma vaga igual a uma já cadastrada, o sistema sugere o autopreenchimento de alguns campos. Também existem validações para todos os campos:
+![Gif demonstrando o autopreenchimento da vaga](https://i.imgur.com/wZeZJmw.gif)
+
+Uma notificação de erro é apresentada em cada caso de erro de comunicação com o backend. Para todas os botões existe um ícone de loading para o caso de demora na resposta.
+
+<h2> Listagem </h2>
+
+Ao excluir uma vaga, esta é removida da base de dados e também é apresentada uma notificação correspondente.
+Também é possível exportar uma vaga no formato PDF:
+![Exportação do PDF](https://i.imgur.com/EDGVjuk.gif)
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [Json Server](https://www.npmjs.com/package/json-server) - Fake API Rest
+- [ReactJS](https://reactjs.org/) - Biblioteca Javascript
+- [Mui](https://mui.com/) - Biblioteca de componentes visuais
+- [React Text Area Autosize](https://www.npmjs.com/package/react-textarea-autosize) - Biblioteca de Componente Text Area
+- [Axios](https://www.npmjs.com/package/axios) - Biblioteca para requisições HTTTP
+- [Cypress](https://www.cypress.io/) - Biblioteca de Testes
+- [React PDF](https://www.npmjs.com/package/@react-pdf/renderer) - Biblioteca para geração de PDFs
+- [SASS](https://sass-lang.com/) - Biblioteca de extensão de CSS
+- [Concurrently](https://www.npmjs.com/package/concurrently) - Biblioteca para execução de scripts concorrentemente
+- [NodeJs](https://nodejs.org/en/) - Ambiente
+
+
+## 🚧 TODO <a name = "todo"></a>
+- Separar o formulário de criação de vaga em um componente a parte para reutilização em uma tela de edição de vagas
+- Alterar o componente de Dialog para ser um context assim como a notificação
+- Alterar alguns campos do formulário para seletores com um ícone **+**
+- Utilizar typescript e adicionar lint no projeto
+- Adicionar mais casos de teste
+- Melhorar design do PDF exportado
+
+## ✍️ Authors <a name = "authors"></a>
+- [Gustavo P. Chaves](https://github.com/gustavo-oo)
