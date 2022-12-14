@@ -46,6 +46,7 @@ Para ter-se uma cópia de desenvolvimento local rodando, deve-se executar os seg
 
 ## 🔧 Executando os Testes <a name = "tests"></a>
 
+Verifique se você tem os [requisitos](https://docs.cypress.io/guides/getting-started/installing-cypress) para executar o cypress
 Para a execução dos testes o projeto já deve estar rodando. Existem duas opções para verificá-los:
  - Sem interface:
  ```
@@ -61,7 +62,7 @@ Para a execução dos testes o projeto já deve estar rodando. Existem duas opç
 O sistema consiste de basicamente duas telas: uma para a criação de vagas, e outra para a visualização destas.
 <p float="left">
   <img src="https://i.imgur.com/8qnE5SF.png" width="500" />
-  <img src="https://i.imgur.com/xlxtbjQ.png" width="500" /> 
+  <img src="https://i.imgur.com/xlxtbjQ.png" width="500" />
 </p>
 
 <h2> Cadastro </h2>
