@@ -47,6 +47,7 @@ Para ter-se uma cópia de desenvolvimento local rodando, deve-se executar os seg
 ## 🔧 Executando os Testes <a name = "tests"></a>
 
 Verifique se você tem os [requisitos](https://docs.cypress.io/guides/getting-started/installing-cypress) para executar o cypress
+
 Para a execução dos testes o projeto já deve estar rodando. Existem duas opções para verificá-los:
  - Sem interface:
  ```
