@@ -7,7 +7,7 @@ import DownloadButton from "components/DownloadButton";
 import VacancyPdfTemplate from "components/VacancyPdfTemplate";
 
 import CircularProgress from '@mui/material/CircularProgress';
-import DeleteIcon from '@mui/icons-material/Delete';
+import { Delete as DeleteIcon } from '@mui/icons-material';
 
 import { NotificationContext } from "contexts/NotificationContext";
 import axios from "config/axiosConfig";
