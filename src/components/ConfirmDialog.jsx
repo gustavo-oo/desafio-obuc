@@ -25,7 +25,9 @@ const ConfirmDialog = ({ open, setOpen, setAnswer, text }) => {
             onClose={handleClose}
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
-            sx={{ borderRadius: "20px" }}
+            PaperProps={{
+                style: { borderRadius: "20px" }
+            }}
         >
             <DialogContent>
                 <DialogContentText id="alert-dialog-description">
