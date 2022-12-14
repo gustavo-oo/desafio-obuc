@@ -23,7 +23,7 @@ describe('User fill fields', () => {
   it('can create a vancancy with valid field', () => {
     cy.intercept("POST", "**/vacancies", "sucess")
     cy.get('[id=submit]').click();
-    cy.url().should("include", "vacancies")
+    cy.url().should("eq", "http://localhost:8080/")
   })
 
   it('cant create a new vacancy with empty salary', () => {
