@@ -64,7 +64,7 @@ const VacanciesList = () => {
             >
                 <div className="card-header">
                     <h2>{vacancy.jobTitle}</h2>
-                    <DeleteIcon sx={{ position: "absolute", alignSelf: "flex-end"}} className="icon-button" onClick={() => onDelete(vacancy.id)} />
+                    <DeleteIcon className="icon-button" onClick={() => onDelete(vacancy.id)} />
                 </div>
                 {getVacancyDescription(vacancy)}
                 <DownloadButton
