@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="logoObuc.png" alt="drawing" style="width:200px;" />
+  <img src="src/assets/logoObuc.png" alt="drawing" style="width:200px;" />
 </p>
 <br>
 
-# 🤓 Desafio Desenvolvedor Front-end Obuc
+# 🤓 Proposta: Desafio Desenvolvedor Front-end Obuc <a name = "about"></a>
 Dona Maria é uma confeiteira de mão cheia. Ela faz doces muito gostosos e, com isso, seu negócio só cresce. Com o tempo, ela viu a necessidade de escalar sua marca e contratar mais pessoas para ajudá-la no nesse crescimento. Para não se perder nas contratações, decidiu criar um formulário em papel onde preencheria informações pertinentes a vaga.
 
 Com o tempo e o crescimento dos doces Dona Maria, ela decidiu melhorar o processo e passar a confecção desses formulários para um sistema, evitando ter que preencher um por um manualmente.
@@ -12,42 +12,51 @@ A ideia do desafio é atender a demanda da cliente, permitindo que ela preencha 
 
 > A maior parte das informações se repete por vaga. Por exemplo, quando se contrata alguém para atender o balcão, o título do cargo, salário, atividades que o cargo exerce, habilidades necessárias e experiência necessária tendem a ter os mesmos valores que a última contratação daquele cargo.
 
-## O que é esperado do teste?
-1. Um formulário contendo:
-  - Título do cargo;
-  - Salário;
-  - Atividades que o cargo exerce;
-  - Benefícios do cargo;
-  - Etapas do processo;
-  - Habilidades necessárias;
-  - Experiência necessária.
+## 📝 Table of Contents
 
-2. Disponibilizar uma maneira de exportar o formulário no fim do processo.
-3. Validação de dados
+- [Getting Started](#getting_started)
+- [Funcionalidades](#usage)
+- [Testes](#tests)
+- [Built Using](#built_using)
+- [TODO](../TODO.md)
+- [Authors](#authors)
 
-## O que essa aplicação deve fazer?
-- Formulário para preenchimento da requisição com todos os campos necessários.
-- Validação do formulário.
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-## Quais tecnologias eu devo usar?
-- React
-- HTML
-- CSS
-- Javascript
+Para ter-se uma cópia de desenvolvimento local rodando, deve-se executar os seguintes passos:
+ - Clonar o repositório
+ - Rodar o comando a seguir. A flag **--legacy-peer-deps** é opcional visto que existe um arquivo de configuração que já a habilita. No entanto, em caso de erro, use-a.
+ ```
+ npm install --legacy-peer-deps
+ ```
+ - Em seguida, para rodar o projeto, basta rodar o comando:
+  ```
+ npm start
+ ```
+ - Foi utilizada uma biblioteca que concorrentemente executa o site e o json server. Em caso de erro com relação a isso, execute-os separadamente (em dois terminais) com os comandos:
+ ```
+ npm run start_react_only
+ ```
+  ```
+ npm run start_server_only
+ ```
 
-## Quais tecnologias eu posso usar?
-Fique à vontade para:
-- Utilizar Typescript.
-- Utilizar bibliotecas para auxiliar na solução.
-- Incorporar testes.
+### Pré-requisitos
+- NodeJs - Versão 18.0.0
 
-> Se achar necessário, utilize o localStorage ou bibliotecas como [JSON Server](https://www.npmjs.com/package/json-server) para simular um banco de dados.
+## 🎈 Funcionalidades <a name="usage"></a>
 
-## Como devo começar?
-Você irá criar um novo repositório baseado neste template e irá codificar sua 
-solução dentro da pasta raiz, após isso você irá enviar o link do seu 
-repositório (não esqueça de deixá-lo público) para o requisitante do teste.
+O sistema consiste de basicamente duas telas: uma para a criação de vagas, e outra para a visualização destas.
 
-## Links que podem ajudar 
-- [Criar um repositório a partir de um modelo](https://docs.github.com/pt/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template)
-- [React](https://pt-br.reactjs.org/)
+## 🔧 Executando os Testes <a name = "tests"></a>
+
+Para a execução dos testes o projeto já deve estar rodando. Existem duas opções para verificá-los:
+ - Sem interface:
+ ```
+  npx cypress run
+ ```
+ - Com interface:
+  ```
+  npx cypress open
+  ```
+
