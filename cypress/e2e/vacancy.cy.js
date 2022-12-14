@@ -13,7 +13,7 @@ const vacancyFields = {
 
 describe('User fill fields', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:8080/')
+    cy.visit('http://localhost:8080/new')
 
     Object.keys(vacancyFields).forEach((key) => {
       cy.get(`[id=${key}]`).type(vacancyFields[key]);

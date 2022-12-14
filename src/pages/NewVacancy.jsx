@@ -76,7 +76,7 @@ const NewVacancy = () => {
             axios
                 .post("/vacancies", vacancyData)
                 .then(() => {
-                    navigate("/vacancies");
+                    navigate("/");
                     notification.setSuccess("Vaga criada com sucesso");
                 })
                 .catch(({ message }) => {

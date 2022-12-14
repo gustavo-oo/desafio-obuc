@@ -4,11 +4,11 @@ import VacanciesList from "pages/VacanciesList";
 
 const routes = [
     {
-        path: "/",
+        path: "/new",
         element: <NewVacancy />,
     },
     {
-        path: "/vacancies",
+        path: "/",
         element: <VacanciesList />,
     },
 ];

@@ -10,12 +10,12 @@ const Sidebar = () => (
                 <NavLink to="/" className={({ isActive }) => (
                     isActive ? "sidebar-link sidebar-active" : "sidebar-link"
                 )}>
-                    Cadastro
+                    Vagas Abertas
                 </NavLink>
-                <NavLink to="/vacancies" className={({ isActive }) => (
+                <NavLink to="/new" className={({ isActive }) => (
                     isActive ? "sidebar-link sidebar-active" : "sidebar-link"
                 )}>
-                    Vagas Abertas
+                    Cadastro
                 </NavLink>
             </div>
         </div>
